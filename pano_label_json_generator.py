@@ -25,7 +25,6 @@ for dir_name, sub_dir_list, file_list in os.walk(crop_location):
         if file_name[-5:] == ".json" and len(file_name) > 20:
             crop_json_list.append(file_name)
 
-
 def create_json_file_with_all_labels():
     for json_file in crop_json_list:
         # Splits the file name into the data that is used to locate Panos, Crops, (x, y), etc
@@ -57,5 +56,5 @@ def create_json_file_with_all_labels():
         })
         with open(pano_json_location, 'w') as json_file:
             json.dump(filedata, json_file)
-        
+
 create_json_file_with_all_labels()
