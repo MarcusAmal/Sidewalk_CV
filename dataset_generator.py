@@ -27,12 +27,28 @@ LABEL = {
     6 : "Occlusion",
     7 : "NoSidewalk"
 }
-
-def bulk_extract_crops():
+def get_csv_file():
     csv_f = open(LABEL_LIST_PATH)
     csv_file = csv.reader(csv_f)
-
     sorted_csv = sorted(csv_file, key = operator.itemgetter(0))
-    print(len(sorted_csv))
+    return sorted_csv
+
+def bulk_extract_crops():
+    csv_file = get_csv_file()
+
+    old_pano = ""
+    pano = None
+    for row in csv_file:
+        pano_id = row[0]
+        sv_image_x = float(row[1])
+        sv_image_y = float(row[2])
+        label_type = int(row[3])
+        photographer_heading = float(row[4])
+        label_id = int(row[7])
+
+        
+
+
+    
 
 bulk_extract_crops()
