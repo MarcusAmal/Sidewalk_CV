@@ -26,7 +26,7 @@ PANO_WIDTH = 2048
 
 # Enter desired crop sidelength here, default value is 
 CROP_HEIGHT_WIDTH = 246 #in Pixels(Default value is: )
-PIXEL_CROP_SIZE = int(crop_height_width/2)
+PIXEL_CROP_SIZE = int(CROP_HEIGHT_WIDTH/2)
 
 label = {
     1 : "CurbRamp",
