@@ -1,17 +1,34 @@
 # Sidewalk_CV
-In order for
 
-## Template Matching Notebook
 
-## training_set_generator.py
+## Notebooks
 
-To obtain the labelData as the CSV
-Run getFullLabelList.sql in the Sidewalk Database
-This script will create a training set that is seperate from the dump of the pano_images
-Update the Global Variables below and enter CROP_AMT, which is the amount of each crop type
-you want.
-The Data will be seperated into two folders, one with the panos and one with the crops
-As of 9/30/2018 the script only creates a set with CurbRamp, NoCurbRamp, Obstacle, SurfaceProblem
+### Crop Classifier.ipynb 
+A Random Forest Classifier was used to classify between the different crops. The features used to train were the raw pixels, from the crop, the SIFT histograms are available for training as well.
+
+### HOG Notebook.ipynb
+In this notebook, SIFT features were extracted from the crops, and each crop was assigned a histogram of SIFT features. 
+Currently the features used to train were the raw pixels, but can easily be changed to use sift_features. Another random forest classifier was used, but can easily be changed to use a SVM. 
+
+Contains a cell which has a slider method, that can be used for object detection. There are couple tests (not that good), using the model to predict the what the crop was based on the given crop from pano slider mechanism.
+
+### Playground.ipynb
+Practice creating SVMs and HOG feature extraction.
+
+### Sift.ipynb
+Practice extracting SIFT features from crops and matching them to their respective panos.
+
+### Stanford Tutorial.ipynb
+Practice using a rainforest classifier, going through the number detection example.
+
+### SVM.ipynb
+Practice training a SVM classifier, that was trained on the raw pixel data from each crop;
+
+### Template Matching Sidewalk.ipynb
+Selecting one Template for each label, and detecting them on a pano
+
+### Template Matching.ipynb
+Template Matching approach for the label detection, complete with data analysis
 
 ## Potentially Useful Scripts
 
